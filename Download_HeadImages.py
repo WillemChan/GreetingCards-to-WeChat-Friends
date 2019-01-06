@@ -4,7 +4,7 @@ import os
 #Get the QR code to log in to the web version of WeChat
 itchat.auto_login()
 friends = itchat.get_friends(update=True)[0:]
-print(len(friends))
+print(len(friends)) #Get the number of friends
 user = friends[0]["NickName"][0:]
 print(user)  #Get the user's name
 
