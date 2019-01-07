@@ -22,3 +22,5 @@ for i in friends[1:100]:
     fileImage=open(i['ImgName'],'wb')
     fileImage.write(i['img'])
     fileImage.close()
+
+print("下载完毕")
