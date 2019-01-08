@@ -26,9 +26,10 @@ def insert_images(pngfile):
     p2.text = '祝您春节快乐'
 
 
-prs = Presentation()
-for pngfile in glob.glob("C:/Users/Willem/Jupyter_Exercise/已处理的图片/*.png"):
-    slide = prs.slides.add_slide(prs.slide_layouts[6])  # 插入图片之前需要先插入一页空白PPT
-    insert_images(pngfile)
-prs.save('test.pptx')  # 保存PPT文件
-print('完成')
+if __name__ == "__main__":
+    prs = Presentation()
+    for pngfile in glob.glob("C:/Users/Willem/Jupyter_Exercise/已处理的图片/*.png"):
+        slide = prs.slides.add_slide(prs.slide_layouts[6])  # 插入图片之前需要先插入一页空白PPT
+        insert_images(pngfile)
+    prs.save('test.pptx')  # 保存PPT文件
+    print('完成')

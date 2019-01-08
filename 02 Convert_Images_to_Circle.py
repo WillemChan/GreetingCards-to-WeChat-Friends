@@ -35,7 +35,8 @@ def convert_image_to_circle(jpgfile, outdir):
     # os.path.splitext()用于将文件名与扩展名分离，否则图片仍然会保存为jpg格式，从而报错
     imc.save(os.path.join(outdir, os.path.basename(os.path.splitext(jpgfile)[0]) + '.png'))
 
-# glob.glob可以返回所有匹配的文件路径列表
-for jpgfile in glob.glob("C:/Users/*.jpg"):  # 输入待处理图片所在的文件夹
-    convert_image_to_circle(jpgfile, "C:/Users/")  # 输入处理之后的图片导出的路径
-print("处理完毕")
+if __name__ == "__main__":
+    # glob.glob可以返回所有匹配的文件路径列表
+    for jpgfile in glob.glob("C:/Users/*.jpg"):  # 输入待处理图片所在的文件夹
+        convert_image_to_circle(jpgfile, "C:/Users/")  # 输入处理之后的图片导出的路径
+    print("处理完毕")
