@@ -27,9 +27,13 @@ def insert_images(pngfile):
 
 
 if __name__ == "__main__":
-    prs = Presentation()
-    for pngfile in glob.glob("C:/Users/Willem/Jupyter_Exercise/已处理的图片/*.png"):
-        slide = prs.slides.add_slide(prs.slide_layouts[6])  # 插入图片之前需要先插入一页空白PPT
+    prs = Presentation('C:/Users/Willem/Jupyter_Exercise/未处理的PPT.pptx')  # 路径设定为需要插入图片和文本的PPT
+    pages = 0  # 需要对 未处理的PPT.pptx 中的所有页面插入图片
+    for slide, pngfile in zip(prs.slides, glob.glob('C:/Users/Willem/Jupyter_Exercise/已处理的图片/*.png')):
+        if pages > len(prs.slides) - 1:
+            continue
+        # slide = prs.slides.add_slide(prs.slide_layouts[6])  # 插入图片之前需要先插入一页空白PPT
         insert_images(pngfile)
-    prs.save('test.pptx')  # 保存PPT文件
+        pages += 1
+    prs.save('已处理的PPT.pptx')  # 保存PPT文件
     print('完成')
