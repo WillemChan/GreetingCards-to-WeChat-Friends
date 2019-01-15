@@ -2,7 +2,7 @@ import os.path, math, glob
 from PIL import Image
 
 
-def convert_image_to_circle(jpgfile, outdir):
+def reshape_image_to_circle(jpgfile, outdir):
     ima = Image.open(jpgfile).convert("RGBA")
     size = ima.size
 
@@ -38,5 +38,5 @@ def convert_image_to_circle(jpgfile, outdir):
 if __name__ == "__main__":
     # glob.glob可以返回所有匹配的文件路径列表
     for jpgfile in glob.glob("C:/Users/*.jpg"):  # 输入待处理图片所在的文件夹
-        convert_image_to_circle(jpgfile, "C:/Users/")  # 输入处理之后的图片导出的路径
+        reshape_image_to_circle(jpgfile, "C:/Users/")  # 输入处理之后的图片导出的路径
     print("处理完毕")
